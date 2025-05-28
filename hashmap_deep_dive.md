@@ -1,3 +1,20 @@
+# The deep internal flow of HashMap from Java 8 to 17, covering the major architectural changes and optimizations.
+
+This comprehensive deep dive covers HashMap's internal evolution from Java 8 to 17. The most significant change was in Java 8 with the introduction of tree-ification, which transformed HashMap from a simple array+linked-list structure to a sophisticated hybrid data structure.
+
+Key takeaways from this evolution:
+
+**Performance Revolution**: Java 8's tree-ification changed worst-case performance from O(n) to O(log n), making HashMap much more resilient to poor hash functions and intentional collision attacks.
+
+**Memory Trade-offs**: TreeNodes consume roughly double the memory of regular Nodes, but this cost is offset by dramatically improved performance in high-collision scenarios.
+
+**Algorithmic Sophistication**: The resize mechanism's clever bit manipulation (`e.hash & oldCap`) is a beautiful example of low-level optimization that maintains both performance and correctness.
+
+**Backward Compatibility**: Despite massive internal changes, the public API remained completely compatible, showcasing excellent engineering design.
+
+The incremental improvements from Java 9-17 have been more subtle, focusing on JIT optimizations, memory efficiency, and edge case handling rather than fundamental architectural changes.
+
+
 # HashMap Internal Flow: Java 8 to 17 Deep Dive
 
 ## Table of Contents
