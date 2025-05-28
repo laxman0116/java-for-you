@@ -4,7 +4,7 @@
 1. [Core Architecture Changes](#core-architecture-changes)
 2. [Internal Data Structure Evolution](#internal-data-structure-evolution)
 3. [Hash Function and Bucket Distribution](#hash-function-and-bucket-distribution)
-4. [Tree-ification Process (Java 8+)](#tree-ification-process-java-8)
+4. [Tree-identification Process (Java 8+)](#tree-identification-process-java-8)
 5. [Put Operation Deep Flow](#put-operation-deep-flow)
 6. [Get Operation Deep Flow](#get-operation-deep-flow)
 7. [Resize Mechanism](#resize-mechanism)
@@ -136,6 +136,7 @@ Using `(n-1) & hash` instead of `hash % n`:
 3. Red nodes have black children
 4. All paths from root to leaves have same number of black nodes
 5. Maintains O(log n) height guarantee
+![image](https://github.com/user-attachments/assets/599ed25d-8149-46a2-91ea-db9a9c74ada1)
 
 ## Put Operation Deep Flow
 
